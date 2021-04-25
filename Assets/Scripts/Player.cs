@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public UnityEvent<Vector3> onPlayerMove;
     public UnityEvent onPlayerSuccessMove;
+    public UnityEvent onDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,10 @@ public class Player : MonoBehaviour
             }
             MoveCharacter(new Vector3(-1, 0, deltaZ));
         }
+
+        if (transform.position.y <= -1f) {
+            Destroy(gameObject);
+        }
     }
 
     void MoveCharacter(Vector3 movementVector) {
@@ -66,5 +71,9 @@ public class Player : MonoBehaviour
         else {
             transform.parent = null;
         }
+    }
+
+    private void OnDestroy() {
+        onDeath.Invoke();
     }
 }
