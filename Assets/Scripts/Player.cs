@@ -37,6 +37,13 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D) && !isJumping) {
             MoveCharacter(new Vector3(0, 0, -1));
         }
+        else if (Input.GetKeyDown(KeyCode.S) && !isJumping) {
+            float deltaZ = 0;
+            if (transform.position.z % 1 != 0) {
+                deltaZ = Mathf.Round(transform.position.z) - transform.position.z;
+            }
+            MoveCharacter(new Vector3(-1, 0, deltaZ));
+        }
     }
 
     void MoveCharacter(Vector3 movementVector) {
@@ -50,5 +57,14 @@ public class Player : MonoBehaviour
 
     public void FinishedJumping() {
         isJumping = false;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Log")) {
+            transform.parent = collision.collider.transform;
+        }
+        else {
+            transform.parent = null;
+        }
     }
 }

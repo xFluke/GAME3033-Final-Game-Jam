@@ -17,7 +17,7 @@ public class TerrainSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentPosition = new Vector3(0, 0, 0);
+        currentPosition = new Vector3(1, 0, 0);
         spawnedTerrains = new List<GameObject>();
 
         for (int i = 0; i < maxTerrainCount; i++) {

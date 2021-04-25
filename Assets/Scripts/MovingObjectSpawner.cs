@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpawner : MonoBehaviour
+public class MovingObjectSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject car;
+    [SerializeField] GameObject movingObject;
     [SerializeField] Transform spawnPoint;
     [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
@@ -23,8 +23,7 @@ public class CarSpawner : MonoBehaviour
     IEnumerator SpawnVehicle() {
         while (true) {
             yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
-            Debug.Log(spawnPoint.rotation.y);
-            GameObject spawnedCar = Instantiate(car, spawnPoint.position, Quaternion.identity);
+            GameObject spawnedCar = Instantiate(movingObject, spawnPoint.position, Quaternion.identity);
 
             if (isLeftSide) {
                 spawnedCar.transform.rotation = Quaternion.AngleAxis(-180, Vector3.up);
