@@ -871,6 +871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4028945683754062034, guid: 4fbce6174832e2f44b3917b44a48ea87, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4028945683754062036, guid: 4fbce6174832e2f44b3917b44a48ea87, type: 3}
       propertyPath: onPlayerMove.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
