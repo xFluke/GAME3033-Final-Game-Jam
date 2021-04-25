@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7058311352877146491}
   - component: {fileID: 1416644775595640669}
   - component: {fileID: 3366502581928445526}
+  - component: {fileID: -4748348711497251946}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -95,3 +96,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4748348711497251946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877462057013843965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8746561e9ab3de4c94f5540cf1e4131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePrefabs:
+  - {fileID: 5113257777841054691, guid: 792d27d2494c2c94f82d51a944f11dfc, type: 3}
+  - {fileID: 8748549948427009020, guid: 41858e407a605364b84066e5d4415976, type: 3}
+  minNumberOfObstaclesToSpawn: 2
+  maxNumberOfObstaclesToSpawn: 3
+  maximumZValue: 8
