@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
         transform.position += movementVector;
 
         onPlayerMove.Invoke(transform.position);
+
+        GetComponent<AudioSource>().Play();
     }
 
     public void FinishedJumping() {
